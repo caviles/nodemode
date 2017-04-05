@@ -34,10 +34,29 @@ $lt -p 3000
     "security-check": "nsp check",
     "localtunnel": "lt -p 3000",
     "share": "npm-run-all --parallel security-check start-up localtunnel"
+    "clean-dist": "rimraf ./dist && mkdir dist",
+     "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
   },
   Note that babel is a transpiler to shim in new feature for ES support
 
+**RIMRAF.js**
+rm -rf -- recursively remove files
 
+**ESLINT**
+
+**Testing**
+Mocha
+Chai
+JSDOM
+Travis CI
+Ad .travis.yml to the root of your pj
+.travis.yml
+language: node_js
+node_js:
+  - "7"
+
+StackEdit
 StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
 
 > **Note:**
